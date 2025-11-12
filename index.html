@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saman Villa - Luxury Villa in Ambawatta, Sri Lanka</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <!-- Logo -->
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="assets/img/logo-2.png"
+            alt="Saman Villa Logo"
+            class="logo-img"
+          />
+        </a>
+
+        <!-- Hamburger Toggle for Mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="rooms.html">Rooms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="amenities.html">Amenities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="location.html">Location</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Sliding Images -->
+    <section class="hero-section">
+      <!-- Hero Slider Container -->
+      <div class="hero-slider">
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <img src="assets/img/ella-3-3.jpg" alt="Saman Villa luxury view" />
+          <div class="hero-overlay"></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <img src="assets/img/ella-3-1.jpg" alt="Saman Villa pool view" />
+          <div class="hero-overlay"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <img src="assets/img/ella-3-2.jpg" alt="Saman Villa bedroom" />
+          <div class="hero-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-xl-6">
+              <h1 class="hero-title">Welcome to Saman Villa</h1>
+              <p class="hero-subtitle">find your luxury palace in our place</p>
+
+              <!-- CTA Buttons -->
+              <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary btn-lg">
+                  Book Your Stay
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+                <a href="rooms.html" class="btn btn-outline-light btn-lg">
+                  Explore Villas
+                </a>
+              </div>
+
+              <!-- Trust Indicators -->
+              <div class="trust-indicators">
+                <div class="trust-item">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>luxury villa</span>
+                </div>
+                <div class="trust-item">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Instant Confirmation</span>
+                </div>
+                <div class="trust-item">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>24/7 Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="hero-controls">
+        <div class="container">
+          <div class="controls-wrapper">
+            <!-- Arrow Navigation -->
+            <div class="arrow-nav">
+              <button class="arrow-btn prev-btn" aria-label="Previous slide">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button class="arrow-btn next-btn" aria-label="Next slide">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+
+            <!-- Dot Indicators -->
+            <div class="dot-indicators">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <i class="bi bi-arrow-down"></i>
+      </div>
+    </section>
+
+    <!-- Your other sections go here -->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/index.js"></script>
+  </body>
+</html>
