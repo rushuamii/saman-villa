@@ -1,3 +1,93 @@
+/* ==================== GLOBAL VARIABLES & IMPORTS ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #8B4513; /* Warm earth tone for luxury villa theme */
+  --primary-dark: #654321;
+  --secondary: #F4E4BC;
+  --accent: #D4AF37;
+  --bg-light: #FAF9F6;
+  --bg-white: #FFFFFF;
+  --text-dark: #2C1810;
+  --text-muted: #6B4E31;
+  --shadow-sm: 0 2px 8px rgba(139, 69, 19, 0.1);
+  --shadow-md: 0 8px 24px rgba(139, 69, 19, 0.12);
+  --shadow-lg: 0 16px 40px rgba(139, 69, 19, 0.15);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+/* ==================== BASE RESET & TYPOGRAPHY ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  text-align: center;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  margin: var(--spacing-xs) auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-md);
+}
+
 /* Import Bootstrap */
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -121,6 +211,7 @@ body {
     min-height: 600px;
     width: 100%;
     overflow: hidden;
+   
 }
 
 /* Hero Slider */
@@ -175,11 +266,12 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
+    align-items: center;
     padding-top: 80px;
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #fff;
     line-height: 1.1;
@@ -367,6 +459,9 @@ body {
         border-radius: 0.5rem;
         margin-top: 1rem;
     }
+    .hero-title{
+            margin-top: 3rem;
+    }
 
     .navbar-nav .nav-link {
         margin: 0.25rem 0;
@@ -382,8 +477,9 @@ body {
 }
 
 @media (max-width: 767px) {
-    .hero-title {
-        font-size: 2rem;
+    .hero-title{
+        margin-top: 2rem;
+        font-size: 10px;
     }
 
     .hero-subtitle {
@@ -424,6 +520,10 @@ body {
     .hero-section {
         min-height: 500px;
     }
+    .hero-title{
+        margin-top: 2rem;
+        font-size: 10px;
+    }
 
     .hero-title {
         font-size: 1.75rem;
@@ -433,4 +533,700 @@ body {
         flex-direction: column;
         gap: 1rem;
     }
+}
+
+/* ==================== OVERVIEW SECTION ==================== */
+.overview-section {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary) 100%);
+}
+
+.highlight-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  height: 100%;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.highlight-card:hover::before {
+  left: 100%;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.highlight-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md);
+  color: #fff;
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.highlight-card:hover .highlight-icon {
+  transform: rotate(360deg);
+}
+
+.highlight-title {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.highlight-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Gallery */
+.gallery-title {
+  font-size: 2rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.villa-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  height: 300px;
+}
+
+.gallery-card.featured {
+  grid-column: span 2;
+  height: 400px;
+}
+
+.gallery-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: #fff;
+  padding: var(--spacing-lg);
+  transform: translateY(100%);
+  transition: var(--transition);
+}
+
+.gallery-card:hover .gallery-info {
+  transform: translateY(0);
+}
+
+.gallery-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  background: var(--accent);
+  color: var(--text-dark);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.gallery-info h4 {
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.gallery-info p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ==================== WHY CHOOSE US SECTION ==================== */
+.why-choose-section {
+  padding: var(--spacing-xl) 0;
+  background: var(--bg-white);
+}
+
+.why-choose-section img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  height: 500px;
+  object-fit: cover;
+}
+
+.why-choose-section img:hover {
+  transform: scale(1.05);
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-light);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  background: var(--secondary);
+  transform: translateX(10px);
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.feature-content h5 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.feature-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==================== ROOMS PREVIEW SECTION ==================== */
+.rooms-preview-section {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--bg-light) 100%);
+}
+
+.room-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.room-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.room-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.room-card:hover .room-image img {
+  transform: scale(1.1);
+}
+
+.room-badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  background: var(--primary);
+  color: #fff;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.room-badge.fan-badge {
+  background: var(--text-muted);
+}
+
+.room-content {
+  padding: var(--spacing-md);
+}
+
+.room-content h4 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.room-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+#button-room {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+/* ==================== AMENITIES SECTION ==================== */
+.amenities-section {
+  padding: var(--spacing-xl) 0;
+  background: var(--bg-white);
+}
+
+.amenity-card {
+  background: var(--bg-light);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: var(--transition);
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.amenity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  background: var(--secondary);
+}
+
+.amenity-card i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  transition: var(--transition);
+}
+
+.amenity-card:hover i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.amenity-card h5 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.amenity-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==================== LOCATION SECTION ==================== */
+.location-section {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary) 100%);
+}
+
+.location-section .section-title {
+  text-align: left;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.location-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-lg) 0;
+}
+
+.location-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.location-item:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.location-item i {
+  color: var(--primary);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.location-item span {
+  color: var(--text-dark);
+}
+
+.map-container {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  height: 400px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==================== BOOKING SECTION ==================== */
+.booking-section {
+  padding: var(--spacing-xl) 0;
+  background: var(--bg-white);
+  text-align: center;
+}
+
+.booking-card {
+  display: block;
+  background: var(--bg-light);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  background: var(--secondary);
+}
+
+.booking-card img {
+  height: 40px;
+  filter: grayscale(0.5);
+  transition: var(--transition);
+}
+
+.booking-card:hover img {
+  filter: grayscale(0);
+}
+
+.booking-card p {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ==================== CTA SECTION ==================== */
+.cta-section {
+  padding: var(--spacing-xl) 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  background: #fff;
+  color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.cta-buttons .btn:hover {
+  background: var(--secondary);
+  color: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.cta-buttons .btn-outline-light {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-buttons .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: var(--text-dark);
+  color: #fff;
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+}
+
+.footer h5 {
+  color: #fff;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.2rem;
+}
+
+.footer p,
+.footer li {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer-links,
+.footer-contact {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--accent);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.footer .btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+}
+
+.footer .btn:hover {
+  background: var(--primary-dark);
+}
+
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: var(--spacing-lg) 0;
+}
+
+.footer .text-center p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 991.98px) {
+  .hero-buttons,
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  .why-choose-section img,
+  .map-container {
+    margin-top: var(--spacing-lg);
+    height: auto;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .villa-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card.featured {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-content {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-controls {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+  }
+
+  .arrow-nav {
+    order: 2;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .location-highlights {
+    margin: var(--spacing-md) 0;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    height: 80vh;
+    min-height: 500px;
+  }
+
+  .highlight-card,
+  .amenity-card,
+  .room-card {
+    padding: var(--spacing-md);
+  }
+
+  .footer .row > div {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Accessibility & Performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom Scrollbar for Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
 }
