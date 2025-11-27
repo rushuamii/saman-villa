@@ -627,3 +627,53 @@ $('#back-to-top').on('click', function() {
 
 console.log('%c🏡 Saman Villa Website', 'color: #8B4513; font-size: 20px; font-weight: bold;');
 console.log('%cDeveloped with ❤️ using Bootstrap & jQuery', 'color: #6B4E31; font-size: 12px;');
+
+
+// ==================== VIDEO TOUR FUNCTIONALITY ====================
+$(document).ready(function() {
+    const video = $('#villaVideo')[0];
+    const videoOverlay = $('#videoOverlay');
+    const playButton = $('#playButton');
+    const videoContainer = $('#videoContainer');
+
+    // Only execute if video element exists
+    if (video) {
+        // Set video poster attribute to first frame
+        video.setAttribute('preload', 'metadata');
+        video.load();
+
+        // Play video when overlay is clicked
+        videoOverlay.on('click', function() {
+            playVideo();
+        });
+
+        playButton.on('click', function(e) {
+            e.stopPropagation();
+            playVideo();
+        });
+
+        // Function to play video
+        function playVideo() {
+            video.play();
+            videoOverlay.addClass('hide');
+        }
+
+        // Show overlay when video is paused
+        video.addEventListener('pause', function() {
+            if (!video.ended) {
+                videoOverlay.removeClass('hide');
+            }
+        });
+
+        // Show overlay when video ends
+        video.addEventListener('ended', function() {
+            videoOverlay.removeClass('hide');
+            video.currentTime = 0;
+        });
+
+        // Hide overlay when video is playing
+        video.addEventListener('play', function() {
+            videoOverlay.addClass('hide');
+        });
+    }
+});

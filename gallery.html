@@ -375,27 +375,38 @@
     </section>
 
     <!-- ==================== VIDEO TOUR SECTION ==================== -->
-    <section class="video-tour-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Virtual Tour</h2>
-                <p class="section-subtitle">Take a virtual walkthrough of Saman Villa</p>
-            </div>
+ <!-- ==================== VIDEO TOUR SECTION ==================== -->
+<section class="video-tour-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Virtual Tour</h2>
+            <p class="section-subtitle">Take a virtual walkthrough of Saman Villa</p>
+        </div>
 
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="video-wrapper">
-                        <div class="video-placeholder">
-                            <i class="bi bi-play-circle"></i>
-                            <p>Coming Soon: Virtual Villa Tour</p>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="video-wrapper" id="videoContainer">
+                    <!-- Video Element (hidden initially) -->
+                    <video id="villaVideo" class="villa-video" controls>
+                        <source src="./assets/video/Compressed-12.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Custom Play Button Overlay -->
+                    <div class="video-overlay" id="videoOverlay">
+                        <button class="play-button" id="playButton">
+                            <i class="bi bi-play-circle-fill"></i>
+                        </button>
+                        <div class="video-info">
+                            <h4>Virtual Villa Tour</h4>
+                            <p><i class="bi bi-clock"></i> Click to watch</p>
                         </div>
-                        <!-- Replace with actual video embed when available -->
-                        <!-- <iframe src="YOUR_VIDEO_URL" frameborder="0" allowfullscreen></iframe> -->
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ==================== CTA SECTION ==================== -->
     <section class="cta-section">
